@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWAT Agro Chemicals - Your Crop's Protector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="english-mode">
+    <div class="header">
+        <div class="header-content">
+            <div class="logo">🌾 <span class="logo-text">SWAT Agro Chemicals</span></div>
+            <div class="tagline" id="tagline">Your Crop's Protector</div>
+            <div class="language-toggle">
+                <button class="lang-btn" onclick="setLanguage('ur')">اردو</button>
+                <button class="lang-btn active" onclick="setLanguage('en')">English</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-section">
+            <h2 class="section-title" id="formTitle">Select Your Crop</h2>
+            
+            <form id="cropForm" onsubmit="getRecommendation(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="crop" id="cropLabel">Crop</label>
+                        <select id="crop" required>
+                            <option value="">Select</option>
+                            <optgroup label="Crops" id="cropGroup">
+                                <option value="Wheat">Wheat</option>
+                                <option value="Rice">Rice</option>
+                                <option value="Cotton">Cotton</option>
+                                <option value="Maize">Maize</option>
+                                <option value="Sugarcane">Sugarcane</option>
+                            </optgroup>
+                            <optgroup label="Vegetables" id="vegGroup">
+                                <option value="Potato">Potato</option>
+                                <option value="Tomato">Tomato</option>
+                                <option value="Onion">Onion</option>
+                                <option value="Chili">Chili</option>
+                                <option value="Cucumber">Cucumber</option>
+                            </optgroup>
+                            <optgroup label="Fruits" id="fruitGroup">
+                                <option value="Apple">Apple</option>
+                                <option value="Pomegranate">Pomegranate</option>
+                                <option value="Grapes">Grapes</option>
+                                <option value="Apricot">Apricot</option>
+                                <option value="Almond">Almond</option>
+                                <option value="Peach">Peach</option>
+                                <option value="Plum">Plum</option>
+                                <option value="Cherry">Cherry</option>
+                                <option value="Walnut">Walnut</option>
+                                <option value="Pistachio">Pistachio</option>
+                                <option value="Date">Date Palm</option>
+                                <option value="Melon">Melon</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cropStage" id="stageLabel">Crop Stage</label>
+                        <select id="cropStage" required>
+                            <option value="">Select</option>
+                            <option value="Seedling">Seedling</option>
+                            <option value="Vegetative">Vegetative</option>
+                            <option value="Flowering">Flowering</option>
+                            <option value="Fruiting">Fruiting</option>
+                            <option value="Maturity">Maturity</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="problemType" id="problemLabel">Problem Type</label>
+                        <select id="problemType" required>
+                            <option value="">Select</option>
+                            <option value="Fungal">Fungal Disease</option>
+                            <option value="Pest">Pest</option>
+                            <option value="Weed">Weed</option>
+                            <option value="Nutrient">Nutrient Deficiency</option>
+                            <option value="General">General Care</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="diseaseGroup" style="display:none;">
+                        <label for="disease" id="diseaseLabel">Disease Type</label>
+                        <select id="disease">
+                            <option value="">Select</option>
+                            <option value="Leaf Spot">Leaf Spot</option>
+                            <option value="Rust">Rust</option>
+                            <option value="Blight">Blight</option>
+                            <option value="Powdery Mildew">Powdery Mildew</option>
+                            <option value="Root Rot">Root Rot</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="pestGroup" style="display:none;">
+                        <label for="pest" id="pestLabel">Pest Type</label>
+                        <select id="pest">
+                            <option value="">Select</option>
+                            <option value="Aphids">Aphids</option>
+                            <option value="Whitefly">Whitefly</option>
+                            <option value="Bollworm">Bollworm</option>
+                            <option value="Thrips">Thrips</option>
+                            <option value="Mites">Mites</option>
+                            <option value="Stem Borer">Stem Borer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="deficiencyGroup" style="display:none;">
+                        <label for="deficiency" id="deficiencyLabel">Deficiency Type</label>
+                        <select id="deficiency" multiple size="5">
+                            <option value="Nitrogen">Nitrogen</option>
+                            <option value="Phosphorus">Phosphorus</option>
+                            <option value="Potassium">Potassium</option>
+                            <option value="Iron">Iron</option>
+                            <option value="Zinc">Zinc</option>
+                            <option value="Boron">Boron</option>
+                            <option value="Calcium">Calcium</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Get Recommendation</button>
+            </form>
+        </div>
+
+        <div id="results" class="results"></div>
+    </div>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
